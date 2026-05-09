@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>郑舒棉 - 简历</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media print {
+      @page { margin: 0.4in; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .no-print { display: none !important; }
+    }
+    .skill-tag {
+      transition: all 0.3s ease;
+    }
+    .skill-tag:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.15);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+
+  <!-- 工具栏 -->
+  <div class="no-print text-center py-4">
+    <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm hover:bg-blue-700 transition shadow-sm">保存为 PDF / 打印</button>
+    <p class="text-xs text-gray-400 mt-2">点击后选择"另存为 PDF"即可下载</p>
+  </div>
+
+  <div class="max-w-3xl mx-auto bg-white shadow-lg p-8 md:p-12 my-4 rounded-xl">
+
+    <!-- 头部：照片 + 基本信息 -->
+    <div class="flex items-start gap-6 border-b pb-5 mb-6">
+      <div class="w-24 h-24 md:w-28 md:h-28 rounded-xl overflow-hidden shrink-0 bg-gray-100 shadow-sm">
+        <img src="相片.jpg" alt="郑舒棉" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-1 min-w-0">
+        <h1 class="text-3xl font-bold text-gray-900">郑舒棉</h1>
+        <p class="text-blue-600 font-medium mt-0.5">嵌入式开发工程师</p>
+        <div class="text-sm text-gray-500 mt-2 space-y-0.5">
+          <p>📧 2647703552@qq.com &nbsp;·&nbsp; 📱 19880841256</p>
+          <p>🔗 gitee.com/zsm_888888 &nbsp;·&nbsp; 🎂 2005年11月</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 个人简介 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>个人简介
+      </h2>
+      <p class="text-sm text-gray-600 leading-relaxed">
+        具备扎实的嵌入式系统开发经验，熟练掌握 STM32、ESP32 等主流 MCU 开发，
+        熟悉 Linux 驱动开发与系统移植。有丰富的物联网项目实践经历，
+        能够独立完成从硬件调试到软件开发的完整流程。热爱技术，
+        持续学习新知识，善于解决实际问题。在校期间成绩优异，综合排名班级第 2。
+      </p>
+    </section>
+
+    <!-- 教育背景 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>教育背景
+      </h2>
+      <div class="flex justify-between items-baseline">
+        <div>
+          <span class="font-semibold text-gray-900">深圳信息职业技术学院</span>
+          <span class="text-sm text-gray-500 ml-2">智能产品开发与应用 · 专科</span>
+        </div>
+        <span class="text-xs text-gray-400 shrink-0 ml-2">2024.09 - 2027.06</span>
+      </div>
+      <div class="text-sm text-gray-500 mt-1.5 space-y-1">
+        <p>🏅 成绩排名：<span class="font-medium text-gray-700">2/37</span>（班级第 2）</p>
+        <p>📖 主修课程：程序设计基础、单片机应用技术、数字电子技术、模拟电子技术、电路分析、PCB 设计、Linux 系统编程</p>
+      </div>
+    </section>
+
+    <!-- 专业技能 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>专业技能
+      </h2>
+      <ul class="text-sm text-gray-600 space-y-2">
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>精通 51、<span class="font-medium text-gray-800">STM32</span> 系列单片机开发，掌握标准库、HAL 库、寄存器开发，了解 Cortex-M3 内核工作原理</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>熟练掌握 <span class="font-medium text-gray-800">C 语言</span>编程，熟悉常用数据结构，掌握堆栈内存管理、指针、结构体</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>熟练使用 <span class="font-medium text-gray-800">KeilIDE</span>、<span class="font-medium text-gray-800">VSCode</span> 等开发环境，熟练使用示波器、逻辑分析仪等调试测试工具</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>熟练使用 <span class="font-medium text-gray-800">FreeRTOS</span>（任务、信号量、事件组），具备源码级分析优化经验</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>能看懂原理图、绘制 PCB，具备 <span class="font-medium text-gray-800">立创EDA</span> 4 层板经验，可独立完成 PCB 布局及分立元件焊接</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>熟练使用 <span class="font-medium text-gray-800">Linux</span> 跨平台开发环境，掌握 <span class="font-medium text-gray-800">Git</span> 版本控制，熟悉 Gerrit 代码审核流程与企业协作开发规范</span>
+        </li>
+      </ul>
+      <!-- 技能标签 -->
+      <div class="flex flex-wrap gap-2 mt-3">
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">STM32</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">ESP32</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">C/C++</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">FreeRTOS</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">Linux</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">MQTT</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">BLE</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">立创EDA</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">Git</span>
+      </div>
+    </section>
+
+    <!-- 项目经历 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>项目经历
+      </h2>
+
+      <div class="mb-4">
+        <div class="flex justify-between items-baseline">
+          <h3 class="font-semibold text-gray-900">智能家居网关</h3>
+          <span class="text-xs text-gray-400">2025</span>
+        </div>
+        <p class="text-sm text-gray-600 mt-1">
+          基于 ESP32 的智能家居网关项目。负责整体架构设计与开发，
+          实现 MQTT 协议通信、Wi-Fi 远程控制、多传感器数据采集与云平台对接。
+          完成了 OTA 远程升级功能的开发与部署。
+        </p>
+      </div>
+
+      <div>
+        <div class="flex justify-between items-baseline">
+          <h3 class="font-semibold text-gray-900">STM32 两轮自平衡小车</h3>
+          <span class="text-xs text-gray-400">2024</span>
+        </div>
+        <p class="text-sm text-gray-600 mt-1">
+          使用 STM32F103 主控，MPU6050 姿态传感器实现倾角检测，
+          采用 PID 闭环控制算法驱动直流电机实现动态自平衡，
+          通过蓝牙模块实现手机遥控与实时数据回传。
+        </p>
+      </div>
+    </section>
+
+    <!-- 在校职务 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>在校职务
+      </h2>
+      <div class="flex flex-wrap gap-x-6 gap-y-1.5 text-sm text-gray-600">
+        <span class="inline-flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>班级学习委员
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>手机维修俱乐部负责人
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span>勤工助学岗位
+        </span>
+      </div>
+    </section>
+
+    <!-- 荣誉奖项 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>荣誉奖项
+      </h2>
+      <div class="grid grid-cols-2 gap-x-6 gap-y-1.5 text-sm text-gray-600">
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-yellow-500">🏅</span>校级一等奖学金
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-yellow-500">🏅</span>校级优秀学生干部
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-yellow-500">🏅</span>国家励志奖学金
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-yellow-500">🏅</span>一星级志愿者
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-green-600">📘</span>英语四级（CET-4）
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-green-600">📘</span>计算机等级证书（WPS）
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-green-600">📘</span>HarmonyOS 应用开发者基础认证
+        </span>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

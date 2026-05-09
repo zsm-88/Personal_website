@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>郑舒棉 - 个人主页</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    html { transition: background-color 0.3s, color 0.3s; scroll-behavior: smooth; }
+
+    /* 按钮 hover 动画 */
+    .btn-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-hover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: rgba(255,255,255,0.15);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .btn-hover:hover::after { transform: scaleX(1); transform-origin: left; }
+    .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,99,235,0.3); }
+    .btn-hover-outline:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+    .btn-hover-outline { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    /* 卡片 hover 动画 */
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+
+    /* 图标 hover */
+    .icon-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-block;
+    }
+    .icon-hover:hover { transform: translateY(-3px) scale(1.1); }
+
+    /* 导航栏滚动效果 */
+    .nav-scrolled {
+      background: rgba(255,255,255,0.85) !important;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.08);
+    }
+    .dark .nav-scrolled {
+      background: rgba(17,24,39,0.85) !important;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 1px 20px rgba(0,0,0,0.3);
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 font-sans leading-relaxed">
+
+  <!-- 导航栏 -->
+  <nav class="bg-white dark:bg-gray-900 shadow-sm dark:shadow-gray-800 sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold tracking-tight">郑舒棉</a>
+
+      <!-- 桌面菜单 -->
+      <ul class="hidden md:flex space-x-8 text-sm font-medium">
+        <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">关于</a></li>
+        <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition">项目</a></li>
+        <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition">联系</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <!-- 深色模式切换 -->
+        <button id="dark-toggle" class="text-xl text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition" title="切换深色模式">
+          <i id="dark-icon" class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- 移动端汉堡按钮 -->
+        <button id="menu-btn" class="md:hidden text-2xl leading-none focus:outline-none text-gray-600 dark:text-gray-400">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 移动端菜单 -->
+    <div id="mobile-menu" class="hidden md:hidden border-t dark:border-gray-700 px-4 pb-4 pt-2 text-sm font-medium space-y-3">
+      <a href="#about" class="block hover:text-blue-600 dark:hover:text-blue-400 transition">关于</a>
+      <a href="#projects" class="block hover:text-blue-600 dark:hover:text-blue-400 transition">项目</a>
+      <a href="#contact" class="block hover:text-blue-600 dark:hover:text-blue-400 transition">联系</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="max-w-5xl mx-auto px-4 py-24 md:py-32 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">你好，我是 <span class="text-blue-600 dark:text-blue-400">郑舒棉</span></h1>
+    <p class="text-lg text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-8">嵌入式开发工程师 · STM32 / ESP32 / Linux / 物联网</p>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <a href="#projects" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-medium btn-hover">查看项目</a>
+      <a href="#contact" class="border border-gray-300 dark:border-gray-600 px-6 py-2.5 rounded-lg text-sm font-medium btn-hover-outline hover:border-gray-400 dark:hover:border-gray-500 transition">联系我</a>
+      <a href="javascript:void(0)" onclick="downloadResume()" class="border border-gray-300 dark:border-gray-600 px-6 py-2.5 rounded-lg text-sm font-medium btn-hover-outline hover:border-green-500 dark:hover:border-green-400 hover:text-green-600 dark:hover:text-green-400 transition">
+        <i class="fa-solid fa-download mr-1.5"></i>下载简历
+      </a>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about" class="bg-white dark:bg-gray-900 py-20">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-8 text-center">关于我</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
+          <i class="fa-solid fa-microchip text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
+          <h3 class="font-semibold mb-1">嵌入式开发</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">STM32 / ESP32 / 裸机与 RTOS 嵌入式软件开发</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
+          <i class="fa-solid fa-linux text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
+          <h3 class="font-semibold mb-1">Linux 应用</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">Linux 驱动开发 / 系统移植 / Shell &amp; C 编程</p>
+        </div>
+        <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
+          <i class="fa-solid fa-wifi text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
+          <h3 class="font-semibold mb-1">物联网</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400">MQTT / BLE / Wi-Fi / 传感器数据采集与云平台对接</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目 -->
+  <section id="projects" class="py-20">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-8 text-center">精选项目</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border dark:border-gray-700 card-hover">
+          <h3 class="font-semibold text-lg mb-1">智能家居网关</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">基于 ESP32 的智能家居网关，支持 MQTT 协议、Wi-Fi 远程控制和多传感器数据采集。</p>
+          <span class="text-xs bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded">ESP32</span>
+          <span class="text-xs bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded ml-1">MQTT</span>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border dark:border-gray-700 card-hover">
+          <h3 class="font-semibold text-lg mb-1">STM32 平衡小车</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">基于 STM32 的两轮自平衡小车，使用 MPU6050 姿态传感器和 PID 控制算法实现动态平衡。</p>
+          <span class="text-xs bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded">STM32</span>
+          <span class="text-xs bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded ml-1">PID</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section id="contact" class="bg-white dark:bg-gray-900 py-20">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold mb-4">联系我</h2>
+      <p class="text-gray-500 dark:text-gray-400 mb-8">欢迎交流与合作</p>
+      <div class="flex justify-center gap-6 text-2xl text-gray-500 dark:text-gray-400">
+        <a href="https://gitee.com/zsm_888888" target="_blank" class="hover:text-red-500 dark:hover:text-red-400 transition icon-hover">
+          <svg viewBox="0 0 24 24" class="w-6 h-6 inline-block" fill="currentColor" style="vertical-align:-0.15em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296Z"/>
+          </svg>
+        </a>
+        <a href="javascript:void(0)" onclick="showInfo('wechat')" class="hover:text-green-500 dark:hover:text-green-400 transition icon-hover"><i class="fa-brands fa-weixin"></i></a>
+        <a href="javascript:void(0)" onclick="showInfo('email')" class="hover:text-yellow-500 dark:hover:text-yellow-400 transition icon-hover"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+
+      <!-- 信息弹窗 -->
+      <div id="info-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 hidden" onclick="closeInfo(event)">
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-xl max-w-sm w-full mx-4 text-center" onclick="event.stopPropagation()">
+          <p id="info-label" class="text-sm text-gray-500 dark:text-gray-400 mb-2"></p>
+          <p id="info-value" class="text-lg font-semibold select-all break-all"></p>
+          <button onclick="copyInfo()" class="mt-4 bg-blue-600 text-white px-4 py-1.5 rounded-lg text-sm hover:bg-blue-700 transition">复制</button>
+          <button onclick="closeInfo()" class="mt-4 ml-2 text-gray-500 dark:text-gray-400 px-4 py-1.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition">关闭</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-400 dark:text-gray-500 py-6">
+    &copy; 2026 郑舒棉. All rights reserved.
+  </footer>
+
+  <script>
+    // 导航栏滚动效果
+    const nav = document.querySelector('nav');
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      nav.classList.toggle('nav-scrolled', scrollY > 40);
+      lastScroll = scrollY;
+    });
+
+    // 移动端菜单
+    document.getElementById('menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // 深色模式切换
+    const html = document.documentElement;
+    const toggle = document.getElementById('dark-toggle');
+    const icon = document.getElementById('dark-icon');
+
+    // 读取 localStorage 或系统偏好
+    if (localStorage.getItem('dark') === 'true' ||
+        (!('dark' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+      icon.className = 'fa-solid fa-sun';
+    }
+
+    toggle.addEventListener('click', () => {
+      const isDark = html.classList.toggle('dark');
+      localStorage.setItem('dark', isDark);
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    });
+
+    // 信息弹窗
+    const infoData = {
+      wechat: { label: '微信号', value: '19880841256' },
+      email: { label: '邮箱', value: '2647703552@qq.com' },
+    };
+
+    function showInfo(type) {
+      const data = infoData[type];
+      if (!data) return;
+      document.getElementById('info-label').textContent = data.label;
+      document.getElementById('info-value').textContent = data.value;
+      document.getElementById('info-modal').classList.remove('hidden');
+    }
+
+    function closeInfo(e) {
+      document.getElementById('info-modal').classList.add('hidden');
+    }
+
+    function copyInfo() {
+      const text = document.getElementById('info-value').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('#info-modal .bg-blue-600');
+        btn.textContent = '已复制!';
+        setTimeout(() => { btn.textContent = '复制'; }, 1500);
+      });
+    }
+
+    // ESC 关闭弹窗
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeInfo();
+    });
+
+    // 下载简历 - 打开 HTML 简历并自动弹出打印 (另存为 PDF)
+    function downloadResume() {
+      const win = window.open('resume.html', '_blank');
+      if (win) {
+        // 等页面加载完后触发打印
+        win.onload = function() {
+          setTimeout(() => { win.print(); }, 500);
+        };
+      }
+    }
+
+  </script>
+</body>
+</html>
