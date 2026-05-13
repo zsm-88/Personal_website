@@ -254,15 +254,9 @@
       if (e.key === 'Escape') closeInfo();
     });
 
-    // 下载简历 - 打开 HTML 简历并自动弹出打印 (另存为 PDF)
+    // 查看简历
     function downloadResume() {
-      const win = window.open('resume.html', '_blank');
-      if (win) {
-        // 等页面加载完后触发打印
-        win.onload = function() {
-          setTimeout(() => { win.print(); }, 500);
-        };
-      }
+      window.open('resume.html', '_blank');
     }
 
   </script>
