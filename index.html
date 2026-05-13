@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -206,11 +206,14 @@
     const toggle = document.getElementById('dark-toggle');
     const icon = document.getElementById('dark-icon');
 
-    // 读取 localStorage 或系统偏好
-    if (localStorage.getItem('dark') === 'true' ||
-        (!('dark' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    // 默认夜间模式（无 localStorage 时默认为 dark）
+    const stored = localStorage.getItem('dark');
+    if (stored === 'true' || stored === null) {
       html.classList.add('dark');
       icon.className = 'fa-solid fa-sun';
+    } else {
+      html.classList.remove('dark');
+      icon.className = 'fa-solid fa-moon';
     }
 
     toggle.addEventListener('click', () => {
