@@ -58,6 +58,27 @@
       backdrop-filter: blur(12px);
       box-shadow: 0 1px 20px rgba(0,0,0,0.3);
     }
+
+    /* 移动端菜单动画 */
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
+      opacity: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    #mobile-menu.open {
+      max-height: 300px;
+      opacity: 1;
+      padding-top: 0.5rem;
+      padding-bottom: 1rem;
+    }
+
+    /* 移动端按钮触控优化 */
+    @media (max-width: 767px) {
+      .btn-touch { padding: 0.625rem 1.25rem; }
+    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
@@ -89,15 +110,15 @@
     </div>
 
     <!-- 移动端菜单 -->
-    <div id="mobile-menu" class="hidden md:hidden border-t dark:border-gray-700 px-4 pb-4 pt-2 text-sm font-medium space-y-3">
-      <a href="#about" class="block hover:text-blue-600 dark:hover:text-blue-400 transition">关于</a>
-      <a href="#projects" class="block hover:text-blue-600 dark:hover:text-blue-400 transition">项目</a>
-      <a href="#contact" class="block hover:text-blue-600 dark:hover:text-blue-400 transition">联系</a>
+    <div id="mobile-menu" class="md:hidden border-t dark:border-gray-700 px-4 text-sm font-medium space-y-2">
+      <a href="#about" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition" onclick="closeMobileMenu()">关于</a>
+      <a href="#projects" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition" onclick="closeMobileMenu()">项目</a>
+      <a href="#contact" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition" onclick="closeMobileMenu()">联系</a>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="max-w-5xl mx-auto px-4 py-24 md:py-32 text-center">
+  <section class="max-w-5xl mx-auto px-4 py-16 md:py-32 text-center">
     <h1 class="text-4xl md:text-5xl font-bold mb-4">你好，我是 <span class="text-blue-600 dark:text-blue-400">郑舒棉</span></h1>
     <p class="text-lg text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-8">嵌入式开发工程师 · STM32 / ESP32 / Linux / 物联网</p>
     <div class="flex justify-center gap-4 flex-wrap">
@@ -110,31 +131,31 @@
   </section>
 
   <!-- 关于 -->
-  <section id="about" class="bg-white dark:bg-gray-900 py-20">
+  <section id="about" class="bg-white dark:bg-gray-900 py-14 md:py-20">
     <div class="max-w-5xl mx-auto px-4">
       <h2 class="text-2xl font-bold mb-8 text-center">关于我</h2>
-      <div class="grid md:grid-cols-3 gap-8 text-center">
-        <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
-          <i class="fa-solid fa-microchip text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="p-5 md:p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
+          <i class="fa-solid fa-microchip text-2xl md:text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
           <h3 class="font-semibold mb-1">嵌入式开发</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">STM32 / ESP32 / 裸机与 RTOS 嵌入式软件开发</p>
+          <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">STM32 / ESP32 / 裸机与 RTOS 嵌入式软件开发</p>
         </div>
-        <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
-          <i class="fa-solid fa-linux text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
+        <div class="p-5 md:p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
+          <i class="fa-solid fa-linux text-2xl md:text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
           <h3 class="font-semibold mb-1">Linux 应用</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">Linux 驱动开发 / 系统移植 / Shell &amp; C 编程</p>
+          <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">Linux 驱动开发 / 系统移植 / Shell &amp; C 编程</p>
         </div>
-        <div class="p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
-          <i class="fa-solid fa-wifi text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
+        <div class="p-5 md:p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
+          <i class="fa-solid fa-wifi text-2xl md:text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
           <h3 class="font-semibold mb-1">物联网</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400">MQTT / BLE / Wi-Fi / 传感器数据采集与云平台对接</p>
+          <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">MQTT / BLE / Wi-Fi / 传感器数据采集与云平台对接</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 项目 -->
-  <section id="projects" class="py-20">
+  <section id="projects" class="py-14 md:py-20">
     <div class="max-w-5xl mx-auto px-4">
       <h2 class="text-2xl font-bold mb-8 text-center">精选项目</h2>
       <div class="grid md:grid-cols-2 gap-6">
@@ -155,7 +176,7 @@
   </section>
 
   <!-- 联系 -->
-  <section id="contact" class="bg-white dark:bg-gray-900 py-20">
+  <section id="contact" class="bg-white dark:bg-gray-900 py-14 md:py-20">
     <div class="max-w-5xl mx-auto px-4 text-center">
       <h2 class="text-2xl font-bold mb-4">联系我</h2>
       <p class="text-gray-500 dark:text-gray-400 mb-8">欢迎交流与合作</p>
@@ -174,8 +195,10 @@
         <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-xl max-w-sm w-full mx-4 text-center" onclick="event.stopPropagation()">
           <p id="info-label" class="text-sm text-gray-500 dark:text-gray-400 mb-2"></p>
           <p id="info-value" class="text-lg font-semibold select-all break-all"></p>
-          <button onclick="copyInfo()" class="mt-4 bg-blue-600 text-white px-4 py-1.5 rounded-lg text-sm hover:bg-blue-700 transition">复制</button>
-          <button onclick="closeInfo()" class="mt-4 ml-2 text-gray-500 dark:text-gray-400 px-4 py-1.5 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition">关闭</button>
+          <div class="mt-4 flex gap-2 justify-center">
+            <button onclick="copyInfo()" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm hover:bg-blue-700 transition flex-1 md:flex-none">复制</button>
+            <button onclick="closeInfo()" class="text-gray-500 dark:text-gray-400 px-5 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition flex-1 md:flex-none">关闭</button>
+          </div>
         </div>
       </div>
     </div>
@@ -197,9 +220,17 @@
     });
 
     // 移动端菜单
-    document.getElementById('menu-btn').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBtn = document.getElementById('menu-btn');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      const icon = menuBtn.querySelector('i');
+      icon.className = mobileMenu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     });
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      menuBtn.querySelector('i').className = 'fa-solid fa-bars';
+    }
 
     // 深色模式切换
     const html = document.documentElement;

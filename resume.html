@@ -18,28 +18,31 @@
       transform: translateY(-1px);
       box-shadow: 0 4px 12px rgba(37,99,235,0.15);
     }
+    @media (max-width: 767px) {
+      .resume-wrap { margin-left: 0.5rem; margin-right: 0.5rem; }
+    }
   </style>
 </head>
 <body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
 
   <!-- 工具栏 -->
-  <div class="no-print text-center py-4">
-    <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-2 rounded-lg text-sm hover:bg-blue-700 transition shadow-sm">保存为 PDF / 打印</button>
+  <div class="no-print text-center py-4 px-2">
+    <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-3 md:py-2 rounded-lg text-sm hover:bg-blue-700 transition shadow-sm w-full md:w-auto">保存为 PDF / 打印</button>
     <p class="text-xs text-gray-400 mt-2">点击后选择"另存为 PDF"即可下载</p>
   </div>
 
-  <div class="max-w-3xl mx-auto bg-white shadow-lg p-8 md:p-12 my-4 rounded-xl">
+  <div class="max-w-3xl mx-auto bg-white shadow-lg p-5 md:p-12 my-4 rounded-xl resume-wrap">
 
     <!-- 头部：照片 + 基本信息 -->
-    <div class="flex items-start gap-6 border-b pb-5 mb-6">
-      <div class="w-24 h-24 md:w-28 md:h-28 rounded-xl overflow-hidden shrink-0 bg-gray-100 shadow-sm">
+    <div class="flex items-start gap-4 md:gap-6 border-b pb-5 mb-6">
+      <div class="w-20 h-20 md:w-28 md:h-28 rounded-xl overflow-hidden shrink-0 bg-gray-100 shadow-sm">
         <img src="相片.jpg" alt="郑舒棉" class="w-full h-full object-cover">
       </div>
       <div class="flex-1 min-w-0">
-        <h1 class="text-3xl font-bold text-gray-900">郑舒棉</h1>
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-900">郑舒棉</h1>
         <p class="text-blue-600 font-medium mt-0.5">嵌入式开发工程师</p>
-        <div class="text-sm text-gray-500 mt-2 space-y-0.5">
-          <p>📧 2647703552@qq.com &nbsp;·&nbsp; 📱 19880841256</p>
+        <div class="text-xs md:text-sm text-gray-500 mt-2 space-y-0.5">
+          <p class="break-all">📧 2647703552@qq.com &nbsp;·&nbsp; 📱 19880841256</p>
           <p>🔗 gitee.com/zsm_888888 &nbsp;·&nbsp; 🎂 2005年11月</p>
         </div>
       </div>
@@ -63,12 +66,12 @@
       <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
         <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>教育背景
       </h2>
-      <div class="flex justify-between items-baseline">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
         <div>
           <span class="font-semibold text-gray-900">深圳信息职业技术学院</span>
           <span class="text-sm text-gray-500 ml-2">智能产品开发与应用 · 专科</span>
         </div>
-        <span class="text-xs text-gray-400 shrink-0 ml-2">2024.09 - 2027.06</span>
+        <span class="text-xs text-gray-400 mt-1 md:mt-0 md:shrink-0 md:ml-2">2024.09 - 2027.06</span>
       </div>
       <div class="text-sm text-gray-500 mt-1.5 space-y-1">
         <p>🏅 成绩排名：<span class="font-medium text-gray-700">2/37</span>（班级第 2）</p>
@@ -130,7 +133,7 @@
       <div class="mb-4">
         <div class="flex justify-between items-baseline">
           <h3 class="font-semibold text-gray-900">智能家居网关</h3>
-          <span class="text-xs text-gray-400">2025</span>
+          <span class="text-xs text-gray-400 shrink-0 ml-2">2025</span>
         </div>
         <p class="text-sm text-gray-600 mt-1">
           基于 ESP32 的智能家居网关项目。负责整体架构设计与开发，
@@ -142,7 +145,7 @@
       <div>
         <div class="flex justify-between items-baseline">
           <h3 class="font-semibold text-gray-900">STM32 两轮自平衡小车</h3>
-          <span class="text-xs text-gray-400">2024</span>
+          <span class="text-xs text-gray-400 shrink-0 ml-2">2024</span>
         </div>
         <p class="text-sm text-gray-600 mt-1">
           使用 STM32F103 主控，MPU6050 姿态传感器实现倾角检测，
@@ -175,7 +178,7 @@
       <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
         <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>荣誉奖项
       </h2>
-      <div class="grid grid-cols-2 gap-x-6 gap-y-1.5 text-sm text-gray-600">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1.5 text-sm text-gray-600">
         <span class="inline-flex items-center gap-1.5">
           <span class="text-yellow-500">🏅</span>校级一等奖学金
         </span>
