@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zsm-88.github.io/Personal_website/sitemap.xml

@@ -1,307 +1,371 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="dark">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <meta name="description" content="郑舒棉的个人主页 — 嵌入式开发工程师，专注 STM32、ESP32、Linux 驱动开发与物联网项目实践。" />
-  <meta name="keywords" content="郑舒棉,嵌入式开发,STM32,ESP32,Linux,物联网,单片机,FreeRTOS,简历" />
+  <meta name="description" content="郑舒棉的个人主页：嵌入式开发、STM32、ESP32、Linux 与物联网项目实践。" />
+  <meta name="keywords" content="郑舒棉,嵌入式开发,STM32,ESP32,Linux,物联网,FreeRTOS" />
   <meta name="author" content="郑舒棉" />
-  <meta property="og:title" content="郑舒棉 - 个人主页" />
-  <meta property="og:description" content="嵌入式开发工程师，专注 STM32、ESP32、Linux 驱动开发与物联网项目实践。" />
+  <meta name="theme-color" content="#0a0f1a" />
+  <meta property="og:title" content="郑舒棉｜嵌入式开发" />
+  <meta property="og:description" content="从 MCU、RTOS 到物联网连接，记录可运行的嵌入式项目实践。" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://zsm-88.github.io/-/" />
+  <meta property="og:url" content="https://zsm-88.github.io/Personal_website/" />
   <meta property="og:locale" content="zh_CN" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>" />
-  <title>郑舒棉 - 个人主页</title>
+  <meta property="og:image" content="https://zsm-88.github.io/Personal_website/%E7%9B%B8%E7%89%87.jpg" />
+  <link rel="canonical" href="https://zsm-88.github.io/Personal_website/" />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <title>郑舒棉｜嵌入式开发</title>
+
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.classList.toggle('dark', savedTheme ? savedTheme === 'dark' : prefersDark);
+    })();
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class'
-    }
+    tailwind.config = { darkMode: 'class' };
   </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
   <style>
-    html { transition: background-color 0.3s, color 0.3s; scroll-behavior: smooth; }
-
-    /* 按钮 hover 动画 */
-    .btn-hover {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-hover::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: rgba(255,255,255,0.15);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .btn-hover:hover::after { transform: scaleX(1); transform-origin: left; }
-    .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37,99,235,0.3); }
-    .btn-hover-outline:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
-    .btn-hover-outline { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-
-    /* 卡片 hover 动画 */
-    .card-hover {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
-
-    /* 图标 hover */
-    .icon-hover {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      display: inline-block;
-    }
-    .icon-hover:hover { transform: translateY(-3px) scale(1.1); }
-
-    /* 导航栏滚动效果 */
+    :root { color-scheme: light; }
+    .dark { color-scheme: dark; }
+    html { scroll-behavior: smooth; }
+    body { letter-spacing: 0; }
+    section[id] { scroll-margin-top: 5rem; }
     .nav-scrolled {
-      background: rgba(255,255,255,0.85) !important;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 1px 20px rgba(0,0,0,0.08);
+      background: rgba(255,255,255,.88) !important;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(15,23,42,.08);
     }
     .dark .nav-scrolled {
-      background: rgba(17,24,39,0.85) !important;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 1px 20px rgba(0,0,0,0.3);
+      background: rgba(10,15,26,.88) !important;
+      box-shadow: 0 1px 0 rgba(255,255,255,.08);
     }
-
-    /* 移动端菜单动画 */
-    #mobile-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
-      opacity: 0;
-      padding-top: 0;
-      padding-bottom: 0;
+    .project-card { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: rgb(59 130 246 / .55);
+      box-shadow: 0 18px 45px rgba(15,23,42,.09);
     }
-    #mobile-menu.open {
-      max-height: 300px;
-      opacity: 1;
-      padding-top: 0.5rem;
-      padding-bottom: 1rem;
+    .dark .project-card:hover { box-shadow: 0 18px 45px rgba(0,0,0,.28); }
+    .focus-ring:focus-visible,
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid #3b82f6;
+      outline-offset: 4px;
     }
-
-    /* 移动端按钮触控优化 */
-    @media (max-width: 767px) {
-      .btn-touch { padding: 0.625rem 1.25rem; }
+    dialog::backdrop { background: rgba(2,6,23,.68); backdrop-filter: blur(4px); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 text-gray-800 dark:text-gray-200 font-sans leading-relaxed">
+<body class="bg-white text-slate-900 antialiased dark:bg-[#0a0f1a] dark:text-slate-100">
+  <a href="#main" class="fixed left-4 top-3 z-[60] -translate-y-20 rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white transition focus:translate-y-0">跳到主要内容</a>
 
-  <!-- 导航栏 -->
-  <nav class="bg-white dark:bg-gray-900 shadow-sm dark:shadow-gray-800 sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a href="#" class="text-xl font-bold tracking-tight">郑舒棉</a>
-
-      <!-- 桌面菜单 -->
-      <ul class="hidden md:flex space-x-8 text-sm font-medium">
-        <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">关于</a></li>
-        <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition">项目</a></li>
-        <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition">联系</a></li>
-      </ul>
-
-      <div class="flex items-center gap-3">
-        <!-- 深色模式切换 -->
-        <button id="dark-toggle" class="text-xl text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition" title="切换深色模式">
-          <i id="dark-icon" class="fa-solid fa-moon"></i>
-        </button>
-
-        <!-- 移动端汉堡按钮 -->
-        <button id="menu-btn" class="md:hidden text-2xl leading-none focus:outline-none text-gray-600 dark:text-gray-400">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- 移动端菜单 -->
-    <div id="mobile-menu" class="md:hidden border-t dark:border-gray-700 px-4 text-sm font-medium space-y-2">
-      <a href="#about" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition" onclick="closeMobileMenu()">关于</a>
-      <a href="#projects" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition" onclick="closeMobileMenu()">项目</a>
-      <a href="#contact" class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition" onclick="closeMobileMenu()">联系</a>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <section class="max-w-5xl mx-auto px-4 py-16 md:py-32 text-center">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">你好，我是 <span class="text-blue-600 dark:text-blue-400">郑舒棉</span></h1>
-    <p class="text-lg text-gray-500 dark:text-gray-400 max-w-xl mx-auto mb-8">嵌入式开发工程师 · STM32 / ESP32 / Linux / 物联网</p>
-    <div class="flex justify-center gap-4 flex-wrap">
-      <a href="#projects" class="bg-blue-600 text-white px-6 py-2.5 rounded-lg text-sm font-medium btn-hover">查看项目</a>
-      <a href="#contact" class="border border-gray-300 dark:border-gray-600 px-6 py-2.5 rounded-lg text-sm font-medium btn-hover-outline hover:border-gray-400 dark:hover:border-gray-500 transition">联系我</a>
-      <a href="javascript:void(0)" onclick="downloadResume()" class="border border-gray-300 dark:border-gray-600 px-6 py-2.5 rounded-lg text-sm font-medium btn-hover-outline hover:border-green-500 dark:hover:border-green-400 hover:text-green-600 dark:hover:text-green-400 transition">
-        <i class="fa-solid fa-download mr-1.5"></i>下载简历
-      </a>
-    </div>
-  </section>
-
-  <!-- 关于 -->
-  <section id="about" class="bg-white dark:bg-gray-900 py-14 md:py-20">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-8 text-center">关于我</h2>
-      <div class="grid md:grid-cols-3 gap-6 text-center">
-        <div class="p-5 md:p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
-          <i class="fa-solid fa-microchip text-2xl md:text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
-          <h3 class="font-semibold mb-1">嵌入式开发</h3>
-          <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">STM32 / ESP32 / 裸机与 RTOS 嵌入式软件开发</p>
-        </div>
-        <div class="p-5 md:p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
-          <i class="fa-solid fa-linux text-2xl md:text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
-          <h3 class="font-semibold mb-1">Linux 应用</h3>
-          <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">Linux 驱动开发 / 系统移植 / Shell &amp; C 编程</p>
-        </div>
-        <div class="p-5 md:p-6 rounded-xl bg-gray-50 dark:bg-gray-800 card-hover">
-          <i class="fa-solid fa-wifi text-2xl md:text-3xl text-blue-600 dark:text-blue-400 mb-3"></i>
-          <h3 class="font-semibold mb-1">物联网</h3>
-          <p class="text-xs md:text-sm text-gray-500 dark:text-gray-400">MQTT / BLE / Wi-Fi / 传感器数据采集与云平台对接</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 项目 -->
-  <section id="projects" class="py-14 md:py-20">
-    <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-8 text-center">精选项目</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border dark:border-gray-700 card-hover">
-          <h3 class="font-semibold text-lg mb-1">智能家居网关</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">基于 ESP32 的智能家居网关，支持 MQTT 协议、Wi-Fi 远程控制和多传感器数据采集。</p>
-          <span class="text-xs bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded">ESP32</span>
-          <span class="text-xs bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded ml-1">MQTT</span>
-        </div>
-        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm border dark:border-gray-700 card-hover">
-          <h3 class="font-semibold text-lg mb-1">STM32 平衡小车</h3>
-          <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">基于 STM32 的两轮自平衡小车，使用 MPU6050 姿态传感器和 PID 控制算法实现动态平衡。</p>
-          <span class="text-xs bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded">STM32</span>
-          <span class="text-xs bg-blue-50 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded ml-1">PID</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 联系 -->
-  <section id="contact" class="bg-white dark:bg-gray-900 py-14 md:py-20">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-2xl font-bold mb-4">联系我</h2>
-      <p class="text-gray-500 dark:text-gray-400 mb-8">欢迎交流与合作</p>
-      <div class="flex justify-center gap-6 text-2xl text-gray-500 dark:text-gray-400">
-        <a href="https://github.com/zsm-88" target="_blank" rel="noopener noreferrer" class="hover:text-gray-900 dark:hover:text-white transition icon-hover"><i class="fa-brands fa-github"></i></a>
-        <a href="https://gitee.com/zsm_888888" target="_blank" class="hover:text-red-500 dark:hover:text-red-400 transition icon-hover">
-          <svg viewBox="0 0 24 24" class="w-6 h-6 inline-block" fill="currentColor" style="vertical-align:-0.15em" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296Z"/>
-          </svg>
+  <header>
+    <nav id="site-nav" class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 dark:border-white/10 dark:bg-[#0a0f1a]/95" aria-label="主导航">
+      <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 lg:px-8">
+        <a href="#top" class="flex items-center gap-2 font-bold text-slate-950 dark:text-white" aria-label="郑舒棉，返回顶部">
+          <span class="grid h-8 w-8 place-items-center rounded bg-blue-600 text-sm text-white">郑</span>
+          <span>郑舒棉</span>
         </a>
-        <a href="javascript:void(0)" onclick="showInfo('wechat')" class="hover:text-green-500 dark:hover:text-green-400 transition icon-hover"><i class="fa-brands fa-weixin"></i></a>
-        <a href="javascript:void(0)" onclick="showInfo('email')" class="hover:text-yellow-500 dark:hover:text-yellow-400 transition icon-hover"><i class="fa-regular fa-envelope"></i></a>
+
+        <div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex dark:text-slate-300">
+          <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">关于</a>
+          <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">项目</a>
+          <a href="#capabilities" class="hover:text-blue-600 dark:hover:text-blue-400">能力</a>
+          <a href="resume.html" class="hover:text-blue-600 dark:hover:text-blue-400">简历</a>
+        </div>
+
+        <div class="flex items-center gap-1">
+          <button id="theme-toggle" type="button" class="focus-ring grid h-11 w-11 place-items-center rounded text-slate-600 hover:bg-slate-100 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-blue-400" aria-label="切换为深色模式" title="切换颜色主题">
+            <i id="theme-icon" class="fa-solid fa-moon" aria-hidden="true"></i>
+          </button>
+          <button id="menu-toggle" type="button" class="focus-ring grid h-11 w-11 place-items-center rounded text-xl text-slate-600 hover:bg-slate-100 md:hidden dark:text-slate-300 dark:hover:bg-white/10" aria-label="打开导航菜单" aria-controls="mobile-menu" aria-expanded="false">
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
       </div>
 
-      <!-- 信息弹窗 -->
-      <div id="info-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 hidden" onclick="closeInfo(event)">
-        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-xl max-w-sm w-full mx-4 text-center" onclick="event.stopPropagation()">
-          <p id="info-label" class="text-sm text-gray-500 dark:text-gray-400 mb-2"></p>
-          <p id="info-value" class="text-lg font-semibold select-all break-all"></p>
-          <div class="mt-4 flex gap-2 justify-center">
-            <button onclick="copyInfo()" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm hover:bg-blue-700 transition flex-1 md:flex-none">复制</button>
-            <button onclick="closeInfo()" class="text-gray-500 dark:text-gray-400 px-5 py-2 rounded-lg text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition flex-1 md:flex-none">关闭</button>
+      <div id="mobile-menu" class="hidden border-t border-slate-200 px-5 py-3 md:hidden dark:border-white/10">
+        <div class="mx-auto grid max-w-6xl text-sm font-medium text-slate-700 dark:text-slate-200">
+          <a href="#about" class="py-3">关于</a>
+          <a href="#projects" class="py-3">项目</a>
+          <a href="#capabilities" class="py-3">能力</a>
+          <a href="resume.html" class="py-3">查看简历</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="top" class="border-b border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-[#080c15]">
+      <div class="mx-auto max-w-6xl px-5 pb-14 pt-16 md:pb-20 md:pt-24 lg:px-8">
+        <div class="max-w-4xl">
+          <p class="mb-5 flex items-center gap-2 text-sm font-semibold text-emerald-700 dark:text-emerald-400">
+            <span class="h-2 w-2 rounded-full bg-emerald-500" aria-hidden="true"></span>
+            嵌入式开发 · 深圳
+          </p>
+          <h1 class="text-5xl font-black leading-tight text-slate-950 md:text-7xl dark:text-white">郑舒棉</h1>
+          <p class="mt-6 max-w-3xl text-xl leading-9 text-slate-600 md:text-2xl dark:text-slate-300">
+            把传感器、控制算法与联网能力，做成真正可以运行的嵌入式系统。
+          </p>
+          <p class="mt-4 max-w-2xl leading-7 text-slate-500 dark:text-slate-400">
+            聚焦 STM32、ESP32、FreeRTOS 与 Linux，持续记录从硬件调试到云端连接的项目实践。
+          </p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#projects" class="inline-flex min-h-11 items-center gap-2 rounded bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700">
+              查看项目 <i class="fa-solid fa-arrow-down text-xs" aria-hidden="true"></i>
+            </a>
+            <a href="resume.html" class="inline-flex min-h-11 items-center gap-2 rounded border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 hover:border-slate-400 dark:border-white/20 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
+              <i class="fa-regular fa-file-lines" aria-hidden="true"></i> 查看简历
+            </a>
+            <a href="mailto:2647703552@qq.com" class="inline-flex min-h-11 items-center gap-2 rounded px-4 py-3 text-sm font-semibold text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400">
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i> 联系我
+            </a>
+          </div>
+        </div>
+
+        <dl class="mt-14 grid max-w-3xl grid-cols-1 gap-px overflow-hidden rounded border border-slate-200 bg-slate-200 sm:grid-cols-3 dark:border-white/10 dark:bg-white/10">
+          <div class="bg-white px-5 py-4 dark:bg-[#111827]">
+            <dt class="text-xs text-slate-500 dark:text-slate-400">成绩排名</dt>
+            <dd class="mt-1 text-lg font-bold">2 / 37</dd>
+          </div>
+          <div class="bg-white px-5 py-4 dark:bg-[#111827]">
+            <dt class="text-xs text-slate-500 dark:text-slate-400">项目方向</dt>
+            <dd class="mt-1 text-lg font-bold">控制 · 物联网</dd>
+          </div>
+          <div class="bg-white px-5 py-4 dark:bg-[#111827]">
+            <dt class="text-xs text-slate-500 dark:text-slate-400">预计毕业</dt>
+            <dd class="mt-1 text-lg font-bold">2027.06</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24">
+      <div class="mx-auto grid max-w-6xl items-start gap-10 px-5 md:grid-cols-[220px_1fr] lg:gap-16 lg:px-8">
+        <div class="relative mx-auto w-full max-w-[220px] md:mx-0">
+          <img src="相片.jpg" alt="郑舒棉的证件照" width="295" height="413" class="aspect-[5/6] w-full rounded object-cover object-top shadow-xl" />
+          <div class="absolute -bottom-3 -right-3 rounded bg-emerald-500 px-3 py-2 text-xs font-bold text-slate-950">MCU → Cloud</div>
+        </div>
+        <div>
+          <p class="text-sm font-bold uppercase text-blue-600 dark:text-blue-400">About</p>
+          <h2 class="mt-2 text-3xl font-bold text-slate-950 dark:text-white">从底层调试到系统落地</h2>
+          <div class="mt-6 max-w-3xl space-y-4 leading-8 text-slate-600 dark:text-slate-300">
+            <p>就读于深圳信息职业技术学院智能产品开发与应用专业，主要实践方向包括 MCU 开发、实时操作系统、Linux 系统编程与物联网通信。</p>
+            <p>我关注的不只是“功能能运行”，也重视接口调试、任务协作、数据链路和问题定位，尝试把硬件与软件作为一个完整系统来理解。</p>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-slate-700 dark:text-slate-200">
+            <span><i class="fa-solid fa-microchip mr-2 text-blue-500" aria-hidden="true"></i>STM32 / ESP32</span>
+            <span><i class="fa-brands fa-linux mr-2 text-slate-500 dark:text-slate-300" aria-hidden="true"></i>Linux</span>
+            <span><i class="fa-solid fa-wave-square mr-2 text-emerald-500" aria-hidden="true"></i>FreeRTOS</span>
+            <span><i class="fa-solid fa-wifi mr-2 text-amber-500" aria-hidden="true"></i>MQTT / BLE</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="text-center text-sm text-gray-400 dark:text-gray-500 py-6">
-    &copy; 2026 郑舒棉. All rights reserved.
+    <section id="projects" class="border-y border-slate-200 bg-slate-50 py-16 md:py-24 dark:border-white/10 dark:bg-[#0d1422]">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <p class="text-sm font-bold uppercase text-blue-600 dark:text-blue-400">Selected work</p>
+            <h2 class="mt-2 text-3xl font-bold text-slate-950 dark:text-white">项目实践</h2>
+            <p class="mt-3 max-w-2xl text-slate-600 dark:text-slate-400">从通信链路到闭环控制，展示项目中实际完成的功能模块。</p>
+          </div>
+          <a href="https://gitee.com/zsm_888888" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400">
+            查看 Gitee <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="mt-10 grid gap-6 lg:grid-cols-2">
+          <article class="project-card rounded border border-slate-200 bg-white p-6 md:p-8 dark:border-white/10 dark:bg-[#111827]">
+            <div class="flex items-start justify-between gap-5">
+              <div>
+                <p class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">PROJECT 01 · 2025</p>
+                <h3 class="mt-3 text-2xl font-bold text-slate-950 dark:text-white">智能家居网关</h3>
+              </div>
+              <i class="fa-solid fa-house-signal text-3xl text-blue-500" aria-hidden="true"></i>
+            </div>
+            <p class="mt-5 leading-7 text-slate-600 dark:text-slate-300">基于 ESP32 的物联网网关，实现设备数据采集、远程控制与云平台连接。</p>
+            <div class="mt-6 border-t border-slate-200 pt-5 dark:border-white/10">
+              <p class="text-xs font-bold uppercase text-slate-400">实现内容</p>
+              <ul class="mt-3 space-y-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>MQTT 通信与 Wi-Fi 远程控制</li>
+                <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>多传感器数据采集及云平台对接</li>
+                <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>OTA 远程升级功能开发与部署</li>
+              </ul>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="rounded bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">ESP32</span>
+              <span class="rounded bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">MQTT</span>
+              <span class="rounded bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-700 dark:bg-amber-500/10 dark:text-amber-300">OTA</span>
+            </div>
+          </article>
+
+          <article class="project-card rounded border border-slate-200 bg-white p-6 md:p-8 dark:border-white/10 dark:bg-[#111827]">
+            <div class="flex items-start justify-between gap-5">
+              <div>
+                <p class="font-mono text-xs font-bold text-emerald-600 dark:text-emerald-400">PROJECT 02 · 2024</p>
+                <h3 class="mt-3 text-2xl font-bold text-slate-950 dark:text-white">STM32 两轮自平衡小车</h3>
+              </div>
+              <i class="fa-solid fa-gauge-high text-3xl text-amber-500" aria-hidden="true"></i>
+            </div>
+            <p class="mt-5 leading-7 text-slate-600 dark:text-slate-300">使用姿态传感器与 PID 闭环控制，让两轮小车保持动态平衡并支持遥控。</p>
+            <div class="mt-6 border-t border-slate-200 pt-5 dark:border-white/10">
+              <p class="text-xs font-bold uppercase text-slate-400">实现内容</p>
+              <ul class="mt-3 space-y-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>STM32F103 主控与 MPU6050 倾角检测</li>
+                <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>PID 闭环驱动直流电机实现动态平衡</li>
+                <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>蓝牙遥控与实时数据回传</li>
+              </ul>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="rounded bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700 dark:bg-blue-500/10 dark:text-blue-300">STM32F103</span>
+              <span class="rounded bg-emerald-50 px-2.5 py-1 text-xs font-medium text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">PID</span>
+              <span class="rounded bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-700 dark:bg-amber-500/10 dark:text-amber-300">MPU6050</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities" class="py-16 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <p class="text-sm font-bold uppercase text-blue-600 dark:text-blue-400">Capabilities</p>
+        <h2 class="mt-2 text-3xl font-bold text-slate-950 dark:text-white">开发链路</h2>
+        <div class="mt-10 grid border-y border-slate-200 md:grid-cols-3 md:divide-x dark:border-white/10 dark:divide-white/10">
+          <div class="py-7 md:pr-8">
+            <span class="font-mono text-xs text-slate-400">01 / FIRMWARE</span>
+            <h3 class="mt-3 text-lg font-bold">固件与实时系统</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">C/C++、STM32 HAL/寄存器开发、FreeRTOS 任务与同步机制。</p>
+          </div>
+          <div class="border-t border-slate-200 py-7 md:border-0 md:px-8 dark:border-white/10">
+            <span class="font-mono text-xs text-slate-400">02 / HARDWARE</span>
+            <h3 class="mt-3 text-lg font-bold">硬件调试</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">原理图与 PCB、焊接、示波器和逻辑分析仪辅助定位问题。</p>
+          </div>
+          <div class="border-t border-slate-200 py-7 md:border-0 md:pl-8 dark:border-white/10">
+            <span class="font-mono text-xs text-slate-400">03 / CONNECTIVITY</span>
+            <h3 class="mt-3 text-lg font-bold">连接与系统</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">Linux、MQTT、BLE、Wi-Fi，以及传感器数据到云平台的链路。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-slate-950 py-16 text-white md:py-20">
+      <div class="mx-auto flex max-w-6xl flex-col justify-between gap-10 px-5 md:flex-row md:items-end lg:px-8">
+        <div>
+          <p class="text-sm font-bold uppercase text-emerald-400">Contact</p>
+          <h2 class="mt-3 text-3xl font-bold md:text-4xl">聊聊嵌入式、项目或合作</h2>
+          <p class="mt-4 text-slate-400">邮件是最直接的联系方式，也可以在 GitHub 或 Gitee 查看我的动态。</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="mailto:2647703552@qq.com" class="inline-flex min-h-11 items-center gap-2 rounded bg-white px-4 py-3 text-sm font-bold text-slate-950 hover:bg-slate-100">
+            <i class="fa-regular fa-envelope" aria-hidden="true"></i> 邮箱
+          </a>
+          <a href="https://github.com/zsm-88" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded border border-white/20 hover:bg-white/10" aria-label="访问 GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://gitee.com/zsm_888888" target="_blank" rel="noopener noreferrer" class="grid h-11 w-11 place-items-center rounded border border-white/20 hover:bg-white/10" aria-label="访问 Gitee">
+            <i class="fa-solid fa-code-branch" aria-hidden="true"></i>
+          </a>
+          <button id="wechat-button" type="button" class="grid h-11 w-11 place-items-center rounded border border-white/20 hover:bg-white/10" aria-label="查看微信号">
+            <i class="fa-brands fa-weixin" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-slate-950 py-7 text-sm text-slate-500">
+    <div class="mx-auto flex max-w-6xl flex-col justify-between gap-2 px-5 sm:flex-row lg:px-8">
+      <p>&copy; <span id="year">2026</span> 郑舒棉</p>
+      <p>Embedded systems · Shenzhen</p>
+    </div>
   </footer>
 
+  <dialog id="wechat-dialog" class="w-[calc(100%-2rem)] max-w-sm rounded bg-white p-0 text-slate-900 shadow-2xl dark:bg-slate-900 dark:text-white" aria-labelledby="wechat-title">
+    <div class="p-6">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-bold uppercase text-emerald-600 dark:text-emerald-400">WeChat</p>
+          <h2 id="wechat-title" class="mt-1 text-xl font-bold">微信联系</h2>
+        </div>
+        <button id="dialog-close" type="button" class="grid h-10 w-10 place-items-center rounded hover:bg-slate-100 dark:hover:bg-white/10" aria-label="关闭弹窗">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">微信号</p>
+      <p id="wechat-value" class="mt-1 select-all text-lg font-bold">19880841256</p>
+      <button id="copy-wechat" type="button" class="mt-6 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded bg-blue-600 px-4 py-3 text-sm font-bold text-white hover:bg-blue-700">
+        <i class="fa-regular fa-copy" aria-hidden="true"></i><span>复制微信号</span>
+      </button>
+      <p id="copy-status" class="mt-3 min-h-5 text-center text-xs text-emerald-600 dark:text-emerald-400" role="status" aria-live="polite"></p>
+    </div>
+  </dialog>
+
   <script>
-    // 导航栏滚动效果
-    const nav = document.querySelector('nav');
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      nav.classList.toggle('nav-scrolled', scrollY > 40);
-      lastScroll = scrollY;
-    });
-
-    // 移动端菜单
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuBtn = document.getElementById('menu-btn');
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      const icon = menuBtn.querySelector('i');
-      icon.className = mobileMenu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-    });
-    function closeMobileMenu() {
-      mobileMenu.classList.remove('open');
-      menuBtn.querySelector('i').className = 'fa-solid fa-bars';
-    }
-
-    // 深色模式切换
     const html = document.documentElement;
-    const toggle = document.getElementById('dark-toggle');
-    const icon = document.getElementById('dark-icon');
+    const nav = document.getElementById('site-nav');
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    // 默认夜间模式（无 localStorage 时默认为 dark）
-    const stored = localStorage.getItem('dark');
-    if (stored === 'true' || stored === null) {
-      html.classList.add('dark');
-      icon.className = 'fa-solid fa-sun';
-    } else {
-      html.classList.remove('dark');
-      icon.className = 'fa-solid fa-moon';
+    function updateThemeControl() {
+      const isDark = html.classList.contains('dark');
+      themeIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      themeToggle.setAttribute('aria-label', isDark ? '切换为浅色模式' : '切换为深色模式');
+      document.querySelector('meta[name="theme-color"]').content = isDark ? '#0a0f1a' : '#ffffff';
     }
 
-    toggle.addEventListener('click', () => {
+    updateThemeControl();
+    themeToggle.addEventListener('click', () => {
       const isDark = html.classList.toggle('dark');
-      localStorage.setItem('dark', isDark);
-      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateThemeControl();
     });
 
-    // 信息弹窗
-    const infoData = {
-      wechat: { label: '微信号', value: '19880841256' },
-      email: { label: '邮箱', value: '2647703552@qq.com' },
-    };
+    window.addEventListener('scroll', () => nav.classList.toggle('nav-scrolled', window.scrollY > 16), { passive: true });
 
-    function showInfo(type) {
-      const data = infoData[type];
-      if (!data) return;
-      document.getElementById('info-label').textContent = data.label;
-      document.getElementById('info-value').textContent = data.value;
-      document.getElementById('info-modal').classList.remove('hidden');
+    function setMenu(open) {
+      mobileMenu.classList.toggle('hidden', !open);
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? '关闭导航菜单' : '打开导航菜单');
+      menuToggle.querySelector('i').className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
     }
 
-    function closeInfo(e) {
-      document.getElementById('info-modal').classList.add('hidden');
-    }
+    menuToggle.addEventListener('click', () => setMenu(menuToggle.getAttribute('aria-expanded') !== 'true'));
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
 
-    function copyInfo() {
-      const text = document.getElementById('info-value').textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.querySelector('#info-modal .bg-blue-600');
-        btn.textContent = '已复制!';
-        setTimeout(() => { btn.textContent = '复制'; }, 1500);
-      });
-    }
-
-    // ESC 关闭弹窗
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeInfo();
+    const dialog = document.getElementById('wechat-dialog');
+    const copyStatus = document.getElementById('copy-status');
+    document.getElementById('wechat-button').addEventListener('click', () => dialog.showModal());
+    document.getElementById('dialog-close').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => {
+      if (event.target === dialog) dialog.close();
+    });
+    document.getElementById('copy-wechat').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(document.getElementById('wechat-value').textContent);
+        copyStatus.textContent = '已复制到剪贴板';
+      } catch {
+        copyStatus.textContent = '复制失败，请手动选择微信号';
+      }
     });
 
-    // 查看简历
-    function downloadResume() {
-      window.open('resume.html', '_blank');
-    }
-
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>

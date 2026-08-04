@@ -11,9 +11,11 @@
   <meta property="og:title" content="郑舒棉 - 简历" />
   <meta property="og:description" content="郑舒棉的在线简历 — 嵌入式开发工程师，擅长 STM32、ESP32、Linux 驱动开发。" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://zsm-88.github.io/-/resume.html" />
+  <meta property="og:url" content="https://zsm-88.github.io/Personal_website/resume.html" />
   <meta property="og:locale" content="zh_CN" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>" />
+  <meta property="og:image" content="https://zsm-88.github.io/Personal_website/%E7%9B%B8%E7%89%87.jpg" />
+  <link rel="canonical" href="https://zsm-88.github.io/Personal_website/resume.html" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <title>郑舒棉 - 简历</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -21,6 +23,8 @@
       @page { margin: 0.4in; }
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .no-print { display: none !important; }
+      .resume-wrap { margin: 0 !important; max-width: none !important; border-radius: 0 !important; box-shadow: none !important; }
+      section { break-inside: avoid; }
     }
     .skill-tag {
       transition: all 0.3s ease;
@@ -37,9 +41,12 @@
 <body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
 
   <!-- 工具栏 -->
-  <div class="no-print text-center py-4 px-2">
-    <button onclick="window.print()" class="bg-blue-600 text-white px-6 py-3 md:py-2 rounded-lg text-sm hover:bg-blue-700 transition shadow-sm w-full md:w-auto">保存为 PDF / 打印</button>
-    <p class="text-xs text-gray-400 mt-2">点击后选择"另存为 PDF"即可下载</p>
+  <div class="no-print mx-auto flex max-w-3xl flex-col items-center justify-between gap-3 px-2 py-4 sm:flex-row">
+    <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-blue-600">← 返回个人主页</a>
+    <div class="w-full text-center sm:w-auto sm:text-right">
+      <button onclick="window.print()" class="w-full rounded-lg bg-blue-600 px-6 py-3 text-sm text-white shadow-sm transition hover:bg-blue-700 sm:w-auto sm:py-2">保存为 PDF / 打印</button>
+      <p class="mt-2 text-xs text-gray-400">在打印窗口选择“另存为 PDF”</p>
+    </div>
   </div>
 
   <div class="max-w-3xl mx-auto bg-white shadow-lg p-5 md:p-12 my-4 rounded-xl resume-wrap">
@@ -54,7 +61,7 @@
         <p class="text-blue-600 font-medium mt-0.5">嵌入式开发工程师</p>
         <div class="text-xs md:text-sm text-gray-500 mt-2 space-y-0.5">
           <p class="break-all">📧 2647703552@qq.com &nbsp;·&nbsp; 📱 19880841256</p>
-          <p>🔗 gitee.com/zsm_888888 &nbsp;·&nbsp; 🎂 2005年11月</p>
+          <p>🔗 <a href="https://gitee.com/zsm_888888" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">gitee.com/zsm_888888</a> &nbsp;·&nbsp; 🎂 2005年11月</p>
         </div>
       </div>
     </div>
@@ -65,10 +72,10 @@
         <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>个人简介
       </h2>
       <p class="text-sm text-gray-600 leading-relaxed">
-        具备扎实的嵌入式系统开发经验，熟练掌握 STM32、ESP32 等主流 MCU 开发，
-        熟悉 Linux 驱动开发与系统移植。有丰富的物联网项目实践经历，
-        能够独立完成从硬件调试到软件开发的完整流程。热爱技术，
-        持续学习新知识，善于解决实际问题。在校期间成绩优异，综合排名班级第 2。
+        持续积累嵌入式系统项目经验，能够使用 STM32、ESP32 等 MCU 完成功能开发，
+        学习并实践 Linux 驱动开发与系统移植。参与过物联网与运动控制项目，
+        能够完成硬件调试、固件开发和通信链路联调。注重问题定位与实践复盘，
+        在校期间综合排名班级第 2。
       </p>
     </section>
 
@@ -98,11 +105,11 @@
       <ul class="text-sm text-gray-600 space-y-2">
         <li class="flex gap-2">
           <span class="text-blue-600 font-bold shrink-0">•</span>
-          <span>精通 51、<span class="font-medium text-gray-800">STM32</span> 系列单片机开发，掌握标准库、HAL 库、寄存器开发，了解 Cortex-M3 内核工作原理</span>
+          <span>掌握 51、<span class="font-medium text-gray-800">STM32</span> 系列单片机开发，使用过标准库、HAL 库和寄存器开发，了解 Cortex-M3 内核工作原理</span>
         </li>
         <li class="flex gap-2">
           <span class="text-blue-600 font-bold shrink-0">•</span>
-          <span>熟练掌握 <span class="font-medium text-gray-800">C 语言</span>编程，熟悉常用数据结构，掌握堆栈内存管理、指针、结构体</span>
+          <span>能够使用 <span class="font-medium text-gray-800">C 语言</span>完成嵌入式开发，熟悉常用数据结构、指针、结构体和堆栈内存管理</span>
         </li>
         <li class="flex gap-2">
           <span class="text-blue-600 font-bold shrink-0">•</span>
@@ -110,7 +117,7 @@
         </li>
         <li class="flex gap-2">
           <span class="text-blue-600 font-bold shrink-0">•</span>
-          <span>熟练使用 <span class="font-medium text-gray-800">FreeRTOS</span>（任务、信号量、事件组），具备源码级分析优化经验</span>
+          <span>使用过 <span class="font-medium text-gray-800">FreeRTOS</span> 的任务、信号量和事件组等机制，能够进行多任务功能开发与调试</span>
         </li>
         <li class="flex gap-2">
           <span class="text-blue-600 font-bold shrink-0">•</span>
