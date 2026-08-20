@@ -176,15 +176,28 @@
 
       <div>
         <div class="flex justify-between items-baseline">
-          <h3 class="font-semibold text-gray-900">STM32 两轮自平衡小车</h3>
-          <span class="text-xs text-gray-400 shrink-0 ml-2">2024</span>
+          <h3 class="font-semibold text-gray-900">车载平衡滚球运动控制系统（2026 电赛 H 题）</h3>
+          <span class="text-xs text-gray-400 shrink-0 ml-2">2026</span>
         </div>
-        <p class="text-sm text-gray-600 mt-1">
-          使用 STM32F103 主控 + MPU6050 姿态传感器实现倾角检测，
-          采用 PID 闭环控制算法驱动直流电机实现动态自平衡。
-          参与硬件调试全过程：使用示波器抓取 PWM 波形与传感器信号，
-          配合万用表排查电源与连接故障，通过蓝牙模块实现手机遥控与实时数据回传。
-        </p>
+        <div class="flex flex-col md:flex-row gap-4 mt-2">
+          <div class="md:w-2/5 shrink-0">
+            <img src="图片/电赛小车.jpg" alt="车载平衡滚球运动控制系统小车实物" class="w-full rounded-lg border border-gray-200" loading="lazy" />
+          </div>
+          <div class="text-sm text-gray-600 flex-1">
+            <p>
+              2026 年全国大学生电子设计竞赛（TI 杯）H 题项目，3 人团队协作。
+              设计制作一辆载有平衡滚球运动控制装置的循线小车，沿黑色环形路线行驶的同时，
+              通过摆杆角度控制机构将凹槽内钢球稳定在指定位置。
+            </p>
+            <p class="mt-1.5">
+              使用红外光电模块实现黑线循迹与定点启停，配合按键启动和计时显示装置完成行程计时；
+              采用摄像头视觉检测钢球在摆杆凹槽中的位置，通过 PID 闭环控制驱动摆杆角度机构，
+              实现钢球在 ±5cm 范围内的往复移动及行驶过程中的动态稳定（误差≤1cm）；
+              搭建摆球位置监测图传装置，实时回传钢球运动画面并记录测试视频。
+              负责原理图绘制与 PCB Layout 设计，完成样板手工焊接、装配与上电调试，配合团队完成软硬件联调。
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
