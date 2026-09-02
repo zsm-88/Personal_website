@@ -61,6 +61,8 @@
       outline-offset: 4px;
     }
     dialog::backdrop { background: rgba(2,6,23,.68); backdrop-filter: blur(4px); }
+    .skill-tag { transition: all 0.3s ease; }
+    .skill-tag:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.15); }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -80,7 +82,9 @@
 
         <div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex dark:text-slate-300">
           <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">关于</a>
+          <a href="#education" class="hover:text-blue-600 dark:hover:text-blue-400">教育</a>
           <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">项目</a>
+          <a href="#gallery" class="hover:text-blue-600 dark:hover:text-blue-400">作品</a>
           <a href="#capabilities" class="hover:text-blue-600 dark:hover:text-blue-400">能力</a>
           <a href="resume.html" class="hover:text-blue-600 dark:hover:text-blue-400">简历</a>
         </div>
@@ -98,7 +102,9 @@
       <div id="mobile-menu" class="hidden border-t border-slate-200 px-5 py-3 md:hidden dark:border-white/10">
         <div class="mx-auto grid max-w-6xl text-sm font-medium text-slate-700 dark:text-slate-200">
           <a href="#about" class="py-3">关于</a>
+          <a href="#education" class="py-3">教育</a>
           <a href="#projects" class="py-3">项目</a>
+          <a href="#gallery" class="py-3">作品</a>
           <a href="#capabilities" class="py-3">能力</a>
           <a href="resume.html" class="py-3">查看简历</a>
         </div>
@@ -161,20 +167,136 @@
           <p class="text-sm font-bold uppercase text-blue-600 dark:text-blue-400">About</p>
           <h2 class="mt-2 text-3xl font-bold text-slate-950 dark:text-white">从底层调试到系统落地</h2>
           <div class="mt-6 max-w-3xl space-y-4 leading-8 text-slate-600 dark:text-slate-300">
-            <p>就读于深圳信息职业技术大学智能产品开发与应用专业，主要实践方向包括 MCU 开发、实时操作系统、Linux 系统编程与物联网通信。</p>
-            <p>我关注的不只是“功能能运行”，也重视接口调试、任务协作、数据链路和问题定位，尝试把硬件与软件作为一个完整系统来理解。</p>
+            <p>就读于深圳信息职业技术大学，具备软硬结合的嵌入式系统项目经验。熟悉电路板全流程开发：能够使用嘉立创EDA独立完成原理图绘制与PCB Layout设计，熟练掌握SMD/DIP元器件的电烙铁与热风枪手工焊接，具备样板装配经验。能够使用万用表、示波器等仪器进行上电调试与故障排查，配合软硬件联调验证板级功能。</p>
+            <p>我关注的不只是"功能能运行"，也重视接口调试、任务协作、数据链路和问题定位，尝试把硬件与软件作为一个完整系统来理解。在校期间综合排名班级第 2，应聘硬件研发实习生岗位。</p>
           </div>
-          <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-slate-700 dark:text-slate-200">
-            <span><i class="fa-solid fa-microchip mr-2 text-blue-500" aria-hidden="true"></i>STM32 / ESP32</span>
-            <span><i class="fa-brands fa-linux mr-2 text-slate-500 dark:text-slate-300" aria-hidden="true"></i>Linux</span>
-            <span><i class="fa-solid fa-wave-square mr-2 text-emerald-500" aria-hidden="true"></i>FreeRTOS</span>
-            <span><i class="fa-solid fa-wifi mr-2 text-amber-500" aria-hidden="true"></i>MQTT / BLE</span>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <span class="skill-tag rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">STM32</span>
+            <span class="skill-tag rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">ESP32</span>
+            <span class="skill-tag rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">C/C++</span>
+            <span class="skill-tag rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">FreeRTOS</span>
+            <span class="skill-tag rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">Linux</span>
+            <span class="skill-tag rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">MQTT</span>
+            <span class="skill-tag rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">立创EDA</span>
+            <span class="skill-tag rounded-full bg-orange-50 px-2.5 py-1 text-xs font-medium text-orange-600 dark:bg-orange-500/10 dark:text-orange-300">焊接</span>
+            <span class="skill-tag rounded-full bg-orange-50 px-2.5 py-1 text-xs font-medium text-orange-600 dark:bg-orange-500/10 dark:text-orange-300">硬件调试</span>
+            <span class="skill-tag rounded-full bg-green-50 px-2.5 py-1 text-xs font-medium text-green-600 dark:bg-green-500/10 dark:text-green-300">串口通信</span>
+            <span class="skill-tag rounded-full bg-green-50 px-2.5 py-1 text-xs font-medium text-green-600 dark:bg-green-500/10 dark:text-green-300">Arduino</span>
+            <span class="skill-tag rounded-full bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-600 dark:bg-blue-500/10 dark:text-blue-300">Git</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="border-y border-slate-200 bg-slate-50 py-16 md:py-24 dark:border-white/10 dark:bg-[#0d1422]">
+    <!-- 教育背景 -->
+    <section id="education" class="border-y border-slate-200 bg-slate-50 py-16 md:py-24 dark:border-white/10 dark:bg-[#0d1422]">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <p class="text-sm font-bold uppercase text-blue-600 dark:text-blue-400">Education</p>
+        <h2 class="mt-2 text-3xl font-bold text-slate-950 dark:text-white">教育背景</h2>
+        <div class="mt-8 max-w-3xl">
+          <div class="flex flex-col md:flex-row md:justify-between md:items-baseline">
+            <div>
+              <span class="font-semibold text-slate-950 dark:text-white">深圳信息职业技术大学</span>
+              <span class="text-sm text-slate-500 ml-2">智能产品开发与应用 · 专科</span>
+            </div>
+            <span class="text-xs text-slate-400 mt-1 md:mt-0 md:shrink-0">2024.09 - 2027.06</span>
+          </div>
+          <div class="mt-3 space-y-1.5 text-sm text-slate-600 dark:text-slate-400">
+            <p>🏅 成绩排名：<span class="font-medium text-slate-700 dark:text-slate-300">专业前 5%</span>，班级第 2</p>
+            <p>👥 班级职务：<span class="font-medium text-slate-700 dark:text-slate-300">班级学习委员</span></p>
+            <p>📖 主修课程：程序设计基础、单片机应用技术、数字电子技术、模拟电子技术、电路分析、PCB 设计、Linux 系统编程、计算机视觉</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 荣誉奖项 -->
+    <section id="honors" class="py-16 md:py-24">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <p class="text-sm font-bold uppercase text-blue-600 dark:text-blue-400">Honors</p>
+        <h2 class="mt-2 text-3xl font-bold text-slate-950 dark:text-white">荣誉奖项</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 max-w-3xl text-sm text-slate-600 dark:text-slate-300">
+          <span class="inline-flex items-center gap-2 py-1">
+            <span class="text-yellow-500">🏅</span>三好学生
+          </span>
+          <span class="inline-flex items-center gap-2 py-1">
+            <span class="text-yellow-500">🏅</span>优秀学生骨干
+          </span>
+          <span class="inline-flex items-center gap-2 py-1">
+            <span class="text-yellow-500">🏅</span>校级焊接技能大赛二等奖
+          </span>
+          <span class="inline-flex items-center gap-2 py-1">
+            <span class="text-yellow-500">🏅</span>全国大学生电子设计竞赛省二等奖
+          </span>
+          <span class="inline-flex items-center gap-2 py-1">
+            <span class="text-yellow-500">🏅</span>国家励志奖学金
+          </span>
+          <span class="inline-flex items-center gap-2 py-1">
+            <span class="text-yellow-500">🏅</span>深圳市一星级志愿者
+          </span>
+          <span class="inline-flex items-center gap-2 py-1">
+            <span class="text-green-600">📘</span>英语四级（CET-4）
+          </span>
+          <span class="inline-flex items-center gap-2 py-1">
+            <span class="text-green-600">📘</span>计算机等级证书（WPS）
+          </span>
+          <span class="inline-flex items-center gap-2 py-1">
+            <span class="text-green-600">📘</span>HarmonyOS 应用开发者基础认证
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 专业技能 -->
+    <section id="skills" class="border-y border-slate-200 bg-slate-50 py-16 md:py-24 dark:border-white/10 dark:bg-[#0d1422]">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <p class="text-sm font-bold uppercase text-blue-600 dark:text-blue-400">Skills</p>
+        <h2 class="mt-2 text-3xl font-bold text-slate-950 dark:text-white">专业技能</h2>
+        <div class="mt-8 max-w-3xl">
+          <ul class="text-sm text-slate-600 dark:text-slate-300 space-y-2">
+            <li class="flex gap-2">
+              <span class="text-blue-600 font-bold shrink-0">•</span>
+              <span>掌握 51、<span class="font-medium text-slate-800 dark:text-slate-200">STM32</span> 系列单片机开发，使用过标准库、HAL 库和寄存器开发，了解 Cortex-M3 内核工作原理</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-blue-600 font-bold shrink-0">•</span>
+              <span>能够使用 <span class="font-medium text-slate-800 dark:text-slate-200">C 语言</span>完成嵌入式开发，熟悉常用数据结构、指针、结构体和堆栈内存管理</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-blue-600 font-bold shrink-0">•</span>
+              <span>熟练使用 <span class="font-medium text-slate-800 dark:text-slate-200">Keil IDE</span>、<span class="font-medium text-slate-800 dark:text-slate-200">VSCode</span> 等开发环境，熟练使用示波器、万用表、逻辑分析仪等调试测试工具</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-blue-600 font-bold shrink-0">•</span>
+              <span>使用过 <span class="font-medium text-slate-800 dark:text-slate-200">FreeRTOS</span> 的任务、信号量和事件组等机制，能够进行多任务功能开发与调试</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-blue-600 font-bold shrink-0">•</span>
+              <span>熟练使用 <span class="font-medium text-slate-800 dark:text-slate-200">嘉立创EDA</span>独立完成原理图绘制与 PCB Layout 设计</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-blue-600 font-bold shrink-0">•</span>
+              <span>掌握常用 <span class="font-medium text-slate-800 dark:text-slate-200">Linux</span> 基础命令，能够使用 Linux 环境进行嵌入式开发</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-blue-600 font-bold shrink-0">•</span>
+              <span>熟练掌握常用通信接口协议：<span class="font-medium text-slate-800 dark:text-slate-200">UART</span>、<span class="font-medium text-slate-800 dark:text-slate-200">I2C</span>、<span class="font-medium text-slate-800 dark:text-slate-200">SPI</span>，能够使用示波器进行波形抓取与信号分析</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-blue-600 font-bold shrink-0">•</span>
+              <span>具备 <span class="font-medium text-slate-800 dark:text-slate-200">Arduino</span>、<span class="font-medium text-slate-800 dark:text-slate-200">ESP32</span>、<span class="font-medium text-slate-800 dark:text-slate-200">STM32</span>、<span class="font-medium text-slate-800 dark:text-slate-200">TI MSPM0</span> 等嵌入式平台开发经验，有完整实物项目成果</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-blue-600 font-bold shrink-0">•</span>
+              <span>了解<span class="font-medium text-slate-800 dark:text-slate-200">计算机视觉</span>基础知识，能够使用摄像头进行图像采集与目标位置检测（应用于电赛 H 题钢球位置识别）</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 项目实践 -->
+    <section id="projects" class="py-16 md:py-24">
       <div class="mx-auto max-w-6xl px-5 lg:px-8">
         <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
@@ -188,6 +310,7 @@
         </div>
 
         <div class="mt-10 grid gap-6 lg:grid-cols-2">
+          <!-- 项目01：智能植物养护系统 -->
           <article class="project-card rounded border border-slate-200 bg-white p-6 md:p-8 dark:border-white/10 dark:bg-[#111827]">
             <div class="flex items-start justify-between gap-5">
               <div>
@@ -197,7 +320,10 @@
               <i class="fa-solid fa-seedling text-3xl text-emerald-500" aria-hidden="true"></i>
             </div>
             <p class="mt-5 leading-7 text-slate-600 dark:text-slate-300">基于 STM32F103C8T6 独立完成的植物生长环境智能监测与自动调控系统。</p>
-            <div class="mt-6 border-t border-slate-200 pt-5 dark:border-white/10">
+            <div class="mt-4">
+              <img src="图片/智能植物养护.jpg" alt="智能植物养护系统实物" class="w-full rounded-lg border border-slate-200 shadow-sm dark:border-white/10" loading="lazy" />
+            </div>
+            <div class="mt-5 border-t border-slate-200 pt-5 dark:border-white/10">
               <p class="text-xs font-bold uppercase text-slate-400">实现内容</p>
               <ul class="mt-3 space-y-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>温湿度、土壤湿度与光照强度多路传感器采集</li>
@@ -212,6 +338,7 @@
             </div>
           </article>
 
+          <!-- 项目02：车载平衡滚球运动控制系统 -->
           <article class="project-card rounded border border-slate-200 bg-white p-6 md:p-8 dark:border-white/10 dark:bg-[#111827]">
             <div class="flex items-start justify-between gap-5">
               <div>
@@ -220,13 +347,16 @@
               </div>
               <i class="fa-solid fa-car text-3xl text-amber-500" aria-hidden="true"></i>
             </div>
-            <p class="mt-5 leading-7 text-slate-600 dark:text-slate-300">2026 年全国大学生电子设计竞赛（TI 杯）H 题，循线小车行驶同时通过摆杆控制钢球稳定在指定位置。</p>
-            <div class="mt-6 border-t border-slate-200 pt-5 dark:border-white/10">
+            <p class="mt-5 leading-7 text-slate-600 dark:text-slate-300">2026 年全国大学生电子设计竞赛（TI 杯）H 题项目，3 人团队协作。设计制作循线小车，行驶同时通过摆杆角度控制机构将钢球稳定在指定位置。负责单片机程序开发与软硬件联调。</p>
+            <div class="mt-4">
+              <img src="图片/电赛小车.jpg" alt="车载平衡滚球运动控制系统小车实物" class="w-full rounded-lg border border-slate-200 shadow-sm dark:border-white/10" loading="lazy" />
+            </div>
+            <div class="mt-5 border-t border-slate-200 pt-5 dark:border-white/10">
               <p class="text-xs font-bold uppercase text-slate-400">实现内容</p>
               <ul class="mt-3 space-y-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
                 <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>红外光电循迹与定点启停，行驶中动态平衡</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>摄像头视觉检测钢球位置，PID 闭环控制摆杆</li>
-                <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>图传装置实时回传钢球画面（误差≤1cm）</li>
+                <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>摄像头视觉检测钢球位置，PID 闭环控制摆杆实现 ±5cm 往复移动与行驶中动态稳定</li>
+                <li class="flex gap-3"><i class="fa-solid fa-check mt-1 text-emerald-500" aria-hidden="true"></i>搭建图传装置实时回传钢球画面（误差≤1cm）</li>
               </ul>
             </div>
             <div class="mt-6 flex flex-wrap gap-2">
@@ -235,6 +365,65 @@
               <span class="rounded bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-700 dark:bg-amber-500/10 dark:text-amber-300">机器视觉</span>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 焊接作品与 PCB -->
+    <section id="gallery" class="border-t border-slate-200 bg-slate-50 py-16 md:py-24 dark:border-white/10 dark:bg-[#0d1422]">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <p class="text-sm font-bold uppercase text-blue-600 dark:text-blue-400">Gallery</p>
+        <h2 class="mt-2 text-3xl font-bold text-slate-950 dark:text-white">焊接作品与 PCB</h2>
+        <p class="mt-3 max-w-2xl text-slate-600 dark:text-slate-400">独立焊接与设计的部分硬件作品。</p>
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+          <figure class="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#111827]">
+            <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800">
+              <img src="图片/stm32核心板PCB.png" alt="STM32 核心板 PCB" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <figcaption class="border-t border-slate-100 px-2 py-1.5 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">STM32 核心板 PCB</figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#111827]">
+            <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800">
+              <img src="图片/USB扩展坞.jpg" alt="USB 扩展坞" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <figcaption class="border-t border-slate-100 px-2 py-1.5 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">USB 扩展坞</figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#111827]">
+            <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800">
+              <img src="图片/八路抢答器.jpg" alt="八路抢答器" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <figcaption class="border-t border-slate-100 px-2 py-1.5 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">八路抢答器</figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#111827]">
+            <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800">
+              <img src="图片/蓝牙音箱.jpg" alt="蓝牙音箱" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <figcaption class="border-t border-slate-100 px-2 py-1.5 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">蓝牙音箱</figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#111827]">
+            <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800">
+              <img src="图片/收音机.jpg" alt="收音机" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <figcaption class="border-t border-slate-100 px-2 py-1.5 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">收音机</figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#111827]">
+            <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800">
+              <img src="图片/智能空气检测器.jpg" alt="智能空气检测器" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <figcaption class="border-t border-slate-100 px-2 py-1.5 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">智能空气检测器</figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#111827]">
+            <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800">
+              <img src="图片/智能空气检测器PCB.png" alt="智能空气检测器 PCB" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <figcaption class="border-t border-slate-100 px-2 py-1.5 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">智能空气检测器 PCB</figcaption>
+          </figure>
+          <figure class="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#111827]">
+            <div class="aspect-[4/3] bg-slate-50 dark:bg-slate-800">
+              <img src="图片/智能空气检测器原理图.jpg" alt="智能空气检测器原理图" class="h-full w-full object-cover" loading="lazy" />
+            </div>
+            <figcaption class="border-t border-slate-100 px-2 py-1.5 text-center text-xs text-slate-500 dark:border-white/10 dark:text-slate-400">智能空气检测器原理图</figcaption>
+          </figure>
         </div>
       </div>
     </section>
