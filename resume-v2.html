@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <meta name="description" content="郑舒棉的在线简历 — 软件工程师 / 硬件工程师实习生，深圳信息职业技术大学，擅长 C 语言、STM32、FreeRTOS、Linux 与 UART/I2C/SPI 驱动开发，以及嘉立创EDA 原理图与 PCB Layout、SMD/DIP 焊接与硬件调试。" />
+  <meta name="keywords" content="郑舒棉,简历,软件工程师,硬件工程师,嵌入式开发,STM32,ESP32,Linux,单片机,FreeRTOS,PCB设计" />
+  <meta name="author" content="郑舒棉" />
+  <meta property="og:title" content="郑舒棉 - 软件工程师 / 硬件工程师实习生简历" />
+  <meta property="og:description" content="郑舒棉的在线简历 — 软件工程师 / 硬件工程师实习生，擅长 C 语言、STM32、FreeRTOS、Linux 与 UART/I2C/SPI 驱动开发，以及嘉立创EDA 原理图与 PCB Layout、SMD/DIP 焊接与硬件调试。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zsm-88.github.io/Personal_website/resume.html" />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content="https://zsm-88.github.io/Personal_website/%E5%9B%BE%E7%89%87/%E7%9B%B8%E7%89%87.jpg" />
+  <link rel="canonical" href="https://zsm-88.github.io/Personal_website/resume.html" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <title>郑舒棉 - 简历</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media print {
+      @page { size: A4; margin: 0.3in; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: #fff !important; }
+      .no-print { display: none !important; }
+      .resume-wrap { margin: 0 !important; max-width: none !important; border-radius: 0 !important; box-shadow: none !important; padding: 0 !important; background: #fff !important; }
+
+      section { break-inside: avoid; margin-bottom: 0.45rem !important; }
+
+      /* 字号与层级（标题 > 正文 > 小字，保持对比） */
+      h1, h2, h3 { line-height: 1.2 !important; }
+      h2 { font-size: 17px !important; margin-bottom: 0.25rem !important; padding-bottom: 0.15rem !important; }
+      .text-base { font-size: 17px !important; }
+      .text-sm { font-size: 15px !important; line-height: 1.4 !important; }
+      .text-xs { font-size: 12.5px !important; }
+      .text-3xl { font-size: 28px !important; }
+      .md\:text-4xl { font-size: 32px !important; }
+
+      /* 压缩间距（省空间但不破坏层级） */
+      .border-b { padding-bottom: 0.25rem !important; margin-bottom: 0.35rem !important; }
+      .mb-4 { margin-bottom: 0.4rem !important; }
+      .mt-2 { margin-top: 0.25rem !important; }
+      .mt-1\.5 { margin-top: 0.2rem !important; }
+      ul { margin-top: 0.15rem !important; }
+      li { margin-bottom: 0.1rem !important; }
+      .space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.2rem !important; }
+      .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem !important; }
+      .gap-y-1\.5 { row-gap: 0.25rem !important; }
+
+      /* 项目：强制图片左、文字右的横向布局 */
+      .md\:flex-row { flex-direction: row !important; }
+      .md\:w-1\/4 { width: 25% !important; }
+      .md\:gap-6 { gap: 0.75rem !important; }
+
+      /* 头像：放大并按原图比例（295:413）显示，避免裁掉头顶 */
+      .w-20 { width: 7rem !important; }
+      .aspect-\[295\/413\] { aspect-ratio: 295 / 413 !important; }
+
+      /* 教育背景：校名 / 专业 / 日期三分栏。A4 内容区 736px 低于 md 断点 768px，
+         这些 md: 类在打印时不会生效，必须显式写死 */
+      .md\:justify-between { justify-content: space-between !important; }
+      .md\:mt-0 { margin-top: 0 !important; }
+      .md\:shrink-0 { flex-shrink: 0 !important; }
+      .md\:items-baseline { align-items: baseline !important; }
+      .md\:w-1\/3 { width: 33.333333% !important; }
+      .md\:text-center { text-align: center !important; }
+      .md\:text-right { text-align: right !important; }
+
+      /* 荣誉奖项网格：强制两列（A4 内容区 736px 低于 md 断点 768px，否则退化成单列） */
+      .grid-cols-1 { grid-template-columns: repeat(2, 1fr) !important; }
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr) !important; }
+
+      /* 实训作品：两列、紧凑 */
+      .gap-y-2\.5 { row-gap: 0.3rem !important; }
+      .gap-x-6 { column-gap: 1rem !important; }
+
+      /* 技能标签 */
+      .skill-tag { font-size: 11px !important; padding: 0.1rem 0.35rem !important; }
+    }
+    .skill-tag {
+      transition: all 0.3s ease;
+    }
+    .skill-tag:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.15);
+    }
+    @media (max-width: 767px) {
+      .resume-wrap { margin-left: 0.5rem; margin-right: 0.5rem; }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans leading-relaxed text-gray-800">
+
+  <!-- 工具栏 -->
+  <div class="no-print mx-auto flex max-w-3xl flex-col items-center justify-between gap-3 px-2 py-4 sm:flex-row">
+    <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-blue-600">← 返回个人主页</a>
+    <div class="w-full text-center sm:w-auto sm:text-right">
+      <button onclick="window.print()" class="w-full rounded-lg bg-blue-600 px-6 py-3 text-sm text-white shadow-sm transition hover:bg-blue-700 sm:w-auto sm:py-2">保存为 PDF / 打印</button>
+      <p class="mt-2 text-xs text-gray-400">在打印窗口选择“另存为 PDF”</p>
+    </div>
+  </div>
+
+  <div class="max-w-3xl mx-auto bg-white shadow-lg p-5 md:p-12 my-4 rounded-xl resume-wrap">
+
+    <!-- 头部：照片 + 基本信息 -->
+    <div class="flex items-start gap-4 md:gap-6 border-b pb-5 mb-6">
+      <div class="w-20 md:w-28 aspect-[295/413] rounded-xl overflow-hidden shrink-0 bg-gray-100 shadow-sm">
+        <img src="图片/相片.jpg" alt="郑舒棉" class="w-full h-full object-cover">
+      </div>
+      <div class="flex-1 min-w-0">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900">郑舒棉</h1>
+        <p class="text-base md:text-lg text-blue-600 font-medium mt-0.5">求职意向：软件工程师 / 硬件工程师 实习生</p>
+        <div class="text-sm md:text-base text-gray-500 mt-2 space-y-0.5">
+          <p class="break-all">📧 2647703552@qq.com &nbsp;·&nbsp; 📱 19880841256 &nbsp;·&nbsp; 🏠 现居深圳</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 个人简介 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>个人简介
+      </h2>
+      <p class="text-sm text-gray-600 leading-relaxed">
+        具备软硬结合的嵌入式项目经验，能独立完成 STM32 / ESP32 程序开发，
+        以及电路原理图设计、PCB Layout、焊接装配与板级调试。
+        在校综合排名班级第 1。
+      </p>
+    </section>
+
+    <!-- 教育背景 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>教育背景
+      </h2>
+      <div class="flex flex-col md:flex-row md:items-baseline">
+        <span class="font-semibold text-gray-900 md:w-1/3">深圳信息职业技术大学</span>
+        <span class="text-sm text-gray-500 mt-0.5 md:mt-0 md:w-1/3 md:text-center">智能产品开发与应用</span>
+        <span class="text-xs text-gray-400 mt-1 md:mt-0 md:w-1/3 md:text-right">2024.09 - 2027.06</span>
+      </div>
+      <div class="text-sm text-gray-500 mt-1.5 space-y-1">
+        <p>🏅 成绩排名：<span class="font-medium text-gray-700">专业前 5%</span>，班级第 1 &nbsp;·&nbsp; 👥 班级职务：<span class="font-medium text-gray-700">班级学习委员</span></p>
+        <p>📖 主修课程：程序设计基础、单片机应用技术、数字电子技术、模拟电子技术、电路分析、机械制图CAD、PCB 设计、Linux 系统编程、计算机视觉</p>
+      </div>
+    </section>
+
+    <!-- 荣誉奖项 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>荣誉奖项
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1.5 text-sm text-gray-600">
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-yellow-500">🏅</span><span class="text-gray-400">2026年</span>全国大学生电子设计竞赛省二等奖
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-yellow-500">🏅</span><span class="text-gray-400">2025年</span>国家励志奖学金
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-yellow-500">🏅</span><span class="text-gray-400">2025年</span>校级焊接技能大赛二等奖
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-yellow-500">🏅</span><span class="text-gray-400">2025年</span>三好学生
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-yellow-500">🏅</span><span class="text-gray-400">2025年</span>优秀学生骨干
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-yellow-500">🏅</span><span class="text-gray-400">2026年</span>优秀学生干部
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-green-600">📘</span>英语四级（CET-4）
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-green-600">📘</span>计算机等级证书（WPS）
+        </span>
+        <span class="inline-flex items-center gap-1.5">
+          <span class="text-green-600">📘</span>HarmonyOS 应用开发者基础认证
+        </span>
+      </div>
+    </section>
+
+    <!-- 专业技能 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>专业技能
+      </h2>
+      <ul class="text-sm text-gray-600 space-y-2">
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>能够使用 <span class="font-medium text-gray-800">C 语言</span>完成嵌入式软件开发，熟悉常用数据结构、指针、结构体与堆栈内存管理</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>掌握 51、<span class="font-medium text-gray-800">STM32</span> 系列单片机开发，使用过标准库、HAL 库与寄存器开发，了解 Cortex-M3 内核工作原理，能够编写外设驱动、传感器采集与电机控制程序</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>了解 <span class="font-medium text-gray-800">FreeRTOS</span> 的任务、信号量与事件组等机制</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>熟练掌握 <span class="font-medium text-gray-800">UART</span>、<span class="font-medium text-gray-800">I2C</span>、<span class="font-medium text-gray-800">SPI</span> 通信接口协议，能够编写驱动，并配合示波器抓取波形、分析通信时序</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>具备 <span class="font-medium text-gray-800">MQTT</span> 物联网通信开发经验：Wi-Fi 模块联网，将设备数据上传至 OneNet 云平台</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>了解<span class="font-medium text-gray-800">计算机视觉</span>基础知识，能够使用摄像头进行图像采集与目标位置检测，并应用 <span class="font-medium text-gray-800">PID 算法</span>实现闭环控制（应用于电赛 H 题钢球位置识别）</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>掌握 <span class="font-medium text-gray-800">Linux</span> 基础命令与 <span class="font-medium text-gray-800">Git</span> 版本管理，熟练使用 <span class="font-medium text-gray-800">Keil</span>、<span class="font-medium text-gray-800">VSCode</span> 等开发环境</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>熟练使用 <span class="font-medium text-gray-800">嘉立创EDA</span> 独立完成原理图绘制与 <span class="font-medium text-gray-800">PCB Layout</span> 设计，掌握元器件布局与走线规范，具备打样成板的完整经验</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>熟练掌握 <span class="font-medium text-gray-800">SMD / DIP 元器件手工焊接</span>与返修，熟练使用万用表、示波器、逻辑分析仪进行上电测试与短路、虚焊等故障排查</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>具备<span class="font-medium text-gray-800">传感器</span>接入、<span class="font-medium text-gray-800">电机驱动</span>、LCD 显示、按键、无线通信模块与摄像头图传等电路的搭建与调试经验</span>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-blue-600 font-bold shrink-0">•</span>
+          <span>具备 <span class="font-medium text-gray-800">Arduino</span>、<span class="font-medium text-gray-800">ESP32</span>、<span class="font-medium text-gray-800">STM32</span>、<span class="font-medium text-gray-800">TI MSPM0</span> 等嵌入式平台开发经验，有完整实物项目成果</span>
+        </li>
+      </ul>
+      <!-- 技能标签 -->
+      <div class="flex flex-wrap gap-2 mt-3">
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">C</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">STM32</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">ESP32</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">FreeRTOS</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">Linux</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">MQTT</span>
+        <span class="skill-tag text-xs bg-green-50 text-green-600 px-2.5 py-1 rounded-full">I2C/SPI</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">PID 控制</span>
+        <span class="skill-tag text-xs bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full">嘉立创EDA</span>
+        <span class="skill-tag text-xs bg-orange-50 text-orange-600 px-2.5 py-1 rounded-full">PCB Layout</span>
+        <span class="skill-tag text-xs bg-orange-50 text-orange-600 px-2.5 py-1 rounded-full">焊接</span>
+        <span class="skill-tag text-xs bg-orange-50 text-orange-600 px-2.5 py-1 rounded-full">硬件调试</span>
+      </div>
+    </section>
+
+    <!-- 项目经历 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>项目经历
+      </h2>
+
+      <div class="mb-4">
+        <div class="flex justify-between items-baseline">
+          <h3 class="font-semibold text-gray-900">智能植物养护系统</h3>
+          <span class="text-xs text-gray-400 shrink-0 ml-2">2025</span>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-6 mt-2">
+          <div class="md:w-1/4 shrink-0">
+            <img src="图片/智能植物养护.jpg" alt="智能植物养护系统实物" class="w-full rounded-lg border border-gray-200 shadow-sm" loading="lazy" />
+          </div>
+          <div class="text-sm text-gray-600 flex-1">
+            <p>
+              基于 STM32F103C8T6 独立完成的植物生长环境智能监测与自动调控系统，
+              <span class="font-medium text-gray-700">独立完成电路搭建、传感器与执行器接线、焊接装配、板级调试及全部程序开发</span>。
+            </p>
+            <p class="mt-1.5">
+              编写多路传感器数据采集与阈值判断逻辑，自动控制风扇、水泵、LED 补光灯，
+              实现浇水、通风、补光闭环管理；LCD 实时显示参数，按键在线设置阈值。
+              通过 Wi-Fi 模块联网，使用 MQTT 协议将传感器数据上传至 OneNet 云平台，
+              可在手机网页端远程查看实时数据。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="flex justify-between items-baseline">
+          <h3 class="font-semibold text-gray-900">车载平衡滚球运动控制系统（2026 电赛 H 题）</h3>
+          <span class="text-xs text-gray-400 shrink-0 ml-2">2026</span>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-6 mt-2">
+          <div class="md:w-1/4 shrink-0">
+            <img src="图片/电赛小车.jpg" alt="车载平衡滚球运动控制系统小车实物" class="w-full rounded-lg border border-gray-200 shadow-sm" loading="lazy" />
+          </div>
+          <div class="text-sm text-gray-600 flex-1">
+            <p>
+              2026 年全国大学生电子设计竞赛（TI 杯）H 题项目，3 人团队协作。
+              设计制作循线小车，行驶同时通过摆杆角度控制机构将钢球稳定在指定位置。
+              负责循迹控制与摆杆闭环控制的程序设计，参与视觉定位部分的调试，
+              <span class="font-medium text-gray-700">并承担整车软硬件联调（含模块接线检查、通电测试与故障排查）</span>。
+            </p>
+            <p class="mt-1.5">
+              红外光电循迹与定点启停；摄像头采集图像并检测钢球位置，通过 PID 算法闭环
+              控制摆杆，实现 ±5cm 往复移动与行驶中动态稳定（误差≤1cm）；
+              搭建图传装置实时回传钢球画面，用于调试与效果验证。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 实训作品 -->
+    <section class="mb-6">
+      <h2 class="text-base font-bold text-gray-900 border-b pb-1 mb-3 flex items-center gap-1.5">
+        <span class="w-1 h-4 bg-blue-600 rounded-full inline-block"></span>实训作品
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2.5 text-sm text-gray-600">
+        <div>
+          <h3 class="font-semibold text-gray-900">智能空气检测器</h3>
+          <p class="mt-0.5">独立完成原理图绘制、PCB Layout、元器件焊接与整机调试，装配主控、环境传感器与显示电路，实现温湿度与空气质量数据的实时采集和显示。</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900">STM32 最小系统核心板</h3>
+          <p class="mt-0.5">从原理图、打样到手工焊接全流程完成，搭建主控、晶振、复位与下载电路，上电测试并成功烧录程序，熟悉 MCU 最小系统的供电与下载电路设计。</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900">八路抢答器</h3>
+          <p class="mt-0.5">焊接按键、编码与数码管显示电路，完成抢答优先级锁定与声光提示功能调试，积累多路输入与显示驱动电路的装配和排故经验。</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900">蓝牙音箱</h3>
+          <p class="mt-0.5">装配蓝牙音频模块、功放与扬声器，调试电源滤波与音频通路，实现手机无线连接播放，掌握音频类电路的焊接与调试方法。</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900">收音机</h3>
+          <p class="mt-0.5">焊接调频接收与音频放大电路，完成天线、调谐和音量控制部分的装配调试，可正常收台播放，练习模拟电路信号通路的逐级排查。</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900">USB 扩展坞</h3>
+          <p class="mt-0.5">完成 USB 接口扩展电路的焊接与测试，处理差分信号走线与接口焊接，验证各端口供电与数据传输正常，熟悉接口类 PCB 的装配要点。</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
